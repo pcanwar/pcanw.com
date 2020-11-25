@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+
+{% block about %}
+
+ <div class="about">
+{#    <div class="row no-gutters page-grid">#}
+        <p>
+            My name is Anwar, and at the moment, I live in New York. I am interested in modern applications that serve various
+            purposes in automating business and end-user processes.
+        </p>
+        <p>
+            I have a passion for designing, developing, maintaining, testing and evaluating software.
+            I am currently working on my other websites/applications that interact with smart contracts and ML/DL algorithms;
+            however, I am also looking for a full-time job.
+{#            What do you think about this site? Actually, no need to think about it, because I didn't even try my hardest. #}
+{#            I enjoy developing and writing things when I have time.#}
+        </p>
+     <p>
+{#         Back in 2009, I used the ASP/VBScript languages in this domain. #}
+         Here is my <a href="{% url 'blog:post_list' %}">blog</a>, which will cover most of the tools that I mentioned on my
+         <a href="{% url 'contact:resume' %}">resume</a>, bigly! I've developed the front-end and back-end of this website as well as hosting
+         it in an EC2 instance; although it is still in development.
+        </p>
+        <p>
+            Since 2005 I have enjoyed mentoring teachers, employees, graduate, and undergraduate students in technology-related topics.
+            If you're looking for an experienced mentor in this field, please don't hesitate to <a href="{% url 'contact:contact' %}">contact</a> me.
+        </p>
+                <hr align="LEFT" size="1" width="70%">
+
+        <br>
+
+{#        <hr align="left" size="2" width="30%">#}
+
+        <div class="section-title">
+
+        <br>
+        <b>If you have a job offer:</b>
+        <br>I appreciate informal conversations, strategy discussions, and exchange of experiences. I expect to work with straightforward clients, prepared interviewers, and clients who are committed to the date of the interviews.
+            <br><b>Benefits:</b>
+        <br>I am looking for the following:
+        <br>Stock-options or possible bonuses,
+        <br>Excellent health plan,
+        <br>Flexible vacation policy,
+        <br>Budget for conference speaking, attendance, and travel.
+
+        <br><br>I am not concerned with:
+        <br>Free food or snacks in the office,
+        <br>Weekly staff parties or vacation trips
+
+        </div>
+        <hr align="CENTER" size="1" width="70%">
+
+
+    </div>
+{# </div>#}
+{% endblock about %}

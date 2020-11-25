@@ -1,0 +1,116 @@
+{% load blog_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Anwar site</title>
+    <meta name="description" content="anwar's blog">
+    <link rel="icon" href="{% static "assets/ico/favicon.ico" %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static  "assets/fonts/ionicons.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/Corporate-Footer-Clean.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/Footer-Clean.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/styles.css" %}">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav flex-grow-1 justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url "blog:post_list" %}">
+                            <div class="avatar"
+                                 style="background:
+                                 url({% static '/assets/img/download.png'%})
+                            center / cover no-repeat;
+                            margin: -9px;">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'blog:about' %}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact:contact' %}">Contract</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<section class="portfolio-block block-intro" style="border-bottom-style: none;border-bottom-color: #9bafc4;">
+        <div class="container ">
+            <div class="text-md-left" >
+             <div id="about">
+                {% block about %}
+
+                {% endblock about %}
+             </div>
+            </div>
+        </div>
+</section>
+
+
+    <div id="content">
+    {% block content %}
+
+    {% endblock content %}
+    </div>
+
+
+
+    <div class="footer-clean">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Home</h3>
+                        <ul>
+                            <li><a href="{% url "blog:post_list" %}">Blog</a>
+
+                            </li>
+{#                            <li><a href="#">Development</a></li>#}
+{#                            <li><a href="#">Hosting</a></li>#}
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                           <li><a class="nav-link" href="{% url 'blog:about' %}">Me</a></li>
+{#                            <li><a href="#">Team</a></li>#}
+{#                            <li><a href="#">Legacy</a></li>#}
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Contact</h3>
+                        <ul>
+                        <a class="nav-link" href="{% url 'contact:contact' %}">Me</a></li>
+{#                            <li><a href="#">Employee success</a></li>#}
+{#                            <li><a href="#">Benefits</a></li>#}
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social">
+{#                        <a href="#">#}
+{#                            <i class="icon ion-social-facebook"></i></a>#}
+{#                        <a href="#">#}
+{#                            <i class="icon ion-social-twitter"></i></a>#}
+{#                        <a href="#">#}
+{#                            <i class="icon ion-social-snapchat"></i></a>#}
+{#                        <a href="#">#}
+{#                            <i class="icon ion-social-instagram"></i></a>#}
+                        <p class="copyright">Anwar © 2020</p>
+                            <p>
+                            <a class="small" href="{% url "blog:post_feed" %}">RSS</a>
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static "assets/js/jquery.min.js" %}"></script>
+    <script src="{% static "assets/bootstrap/js/bootstrap.min.js"%}"></script>
+</body>
+
+</html>

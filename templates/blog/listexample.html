@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <div class="row no-gutters page-grid">
+            <div class="col">
+                <hr>
+                <ul>
+                    {% for post in posts %}
+                        <div class="trend-entry d-flex">
+                            <div class="number align-self-start">{{ post.publish|date:"d" }}</div>
+                            <div class="number2">{{ post.publish|date:"N y" }}</div>
+                            <div class="trend-contents">
+                                <h4 class="card-title">
+                                    <a href="{{ post.get_absolute_url }}">
+                                        {{ post.title }}
+                                    </a>
+                                </h4>
+                                <p class="card-text">
+                                    {{ post.description|truncatewords:30|linebreaks }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </ul>
+                <hr>
+                <div class="clearfix"><button class="btn btn-primary float-right" type="button" style="background: #4c280f;height: 37px;font-size: 14px;border-style: none;border-color: #4c280f;">Older Posts&nbsp;⇒</button></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

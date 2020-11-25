@@ -1,0 +1,38 @@
+
+{% extends "base.html" %}
+{% load blog_tags %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="container">
+    <div class="heading">
+        <h2>Contact me</h2>
+    </div>
+    <form method="post" >
+           {% csrf_token %}
+            {{ form|crispy }}
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" style="background: #4ea1d3;">Send</button></div>
+    </form>
+</div>
+
+
+{#    <div class="container">#}
+{#    <div class="row no-gutters page-grid">#}
+{#<h1 class="modal-title">Contact Me</h1>#}
+{#        <hr>#}
+{#        <br>#}
+{#<div class="col-xs-12 col-sm-6 col-md-8">#}
+{##}
+{#<form method="post" style="margin-top: 1.3em;">#}
+{#    {% csrf_token %}#}
+{#    {{ form|crispy}}#}
+{#    <div class="form-actions">#}
+{#        <button type="submit" class="btn btn-primary">Send</button>#}
+{#    </div>#}
+{#    </div>#}
+{#</form>#}
+{#    </div>#}
+{# </div>#}
+{% endblock content %}

@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load blog_tags %}
+{% load static %}
+
+
+{% block about %}
+
+{% include "baseAbout.html"%}
+
+{% endblock about %}
+
+
+{% block content %}
+
+    <div class="container">
+    <div class="row no-gutters page-grid">
+           {% for post in posts %}
+        <div class="col-md-6 col-sm-6">
+            <ul style="list-style: none;">
+                <li>
+                    <div style=" padding-top: 5px; margin-top: 50px;
+                    background:
+                    url({% static 'assets/img/border_diagonal.png' %})
+                    repeat-x 0 top;">
+                    </div>
+                    <div class="trend-entry d-flex"  >
+                        <div class="number align-self-start">{{ post.publish|date:"d" }}</div>
+                        <br>
+                        <div class="number2">{{ post.publish|date:"N y " }} </div>
+                        <div class="port-title">
+                        <h6 class="title" >
+                            <a style="text-decoration:none; color:black" href="{{ post.get_absolute_url }}">
+                              {{ post.title }}
+                            </a>
+                        </h6>
+                             </div>
+                    </div>
+                    <hr>
+                </li>
+                <ul style="list-style: none;">
+                    <li >
+                        <p>{{ post.description|markdown|truncatewords_html:30 | safe }}</p>
+                    </li>
+
+                <li>
+                    <p class="tags">
+                    {% for tag in post.tags.all %}
+                    <a href="{% url "blog:post_list_by_tag" tag.slug %}">
+                    #{{ tag.name }}
+                    </a>
+                    {% if not forloop.last %}, {% endif %}
+                    {% endfor %}
+                    </p>
+                </li>
+            </ul>
+
+              </ul>
+        </div>
+           {% endfor %}
+        <hr />
+
+
+    </div>
+                <div class="clearfix">
+{#          {% include "blog/pageination.html" with page=page_obj %}#}
+            {% include "blog/pageination.html" with page=posts %}
+
+        </div>
+
+
+
+</div>
+
+
+{% endblock %}
+
+
