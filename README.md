@@ -5,7 +5,8 @@
 # Blog
 
 The website is inclouding:
-
+  
+  - webpage.
   - API: uses only a get method although commented other methods
   - Rss.
 
